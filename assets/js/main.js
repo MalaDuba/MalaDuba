@@ -255,4 +255,39 @@
 
 		}
 
+	// Apartment image slider.
+		$('.apt-slider').each(function() {
+			var $slider = $(this);
+			var images = ($slider.attr('data-images') || '')
+				.split(',')
+				.map(function(s) { return s.trim(); })
+				.filter(Boolean);
+
+			if (images.length <= 1) {
+				$slider.attr('data-single', 'true');
+				return;
+			}
+
+			var idx = 0;
+			var $img = $slider.find('img').first();
+			var $counter = $slider.find('.apt-slider-counter');
+
+			function show(i) {
+				idx = (i + images.length) % images.length;
+				$img.attr('src', images[idx]);
+				$counter.text((idx + 1) + ' / ' + images.length);
+			}
+
+			$slider.on('click', '.apt-slider-prev', function(e) {
+				e.preventDefault();
+				show(idx - 1);
+			});
+			$slider.on('click', '.apt-slider-next', function(e) {
+				e.preventDefault();
+				show(idx + 1);
+			});
+
+			show(0);
+		});
+
 })(jQuery);

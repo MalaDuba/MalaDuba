@@ -4687,3 +4687,91 @@ input, select, textarea {
 		}
 
 	}
+
+/* Apartment image slider */
+
+	.apt-slider {
+		position: relative;
+		overflow: hidden;
+	}
+
+		.apt-slider img {
+			-moz-transition: opacity 0.15s ease-in-out;
+			-webkit-transition: opacity 0.15s ease-in-out;
+			-ms-transition: opacity 0.15s ease-in-out;
+			transition: opacity 0.15s ease-in-out;
+		}
+
+		.apt-slider-btn {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			background: rgba(0, 0, 0, 0.45);
+			border: 0;
+			border-radius: 50%;
+			color: #fff;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 1.25rem;
+			line-height: 1;
+			height: 2.75rem;
+			width: 2.75rem;
+			padding: 0;
+			position: absolute;
+			top: 50%;
+			-webkit-transform: translateY(-50%);
+			-ms-transform: translateY(-50%);
+			transform: translateY(-50%);
+			-moz-transition: background-color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+			-webkit-transition: background-color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+			-ms-transition: background-color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+			transition: background-color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+			z-index: 2;
+		}
+
+			.apt-slider-btn:hover,
+			.apt-slider-btn:focus {
+				background: rgba(0, 0, 0, 0.75);
+				outline: 0;
+			}
+
+		.apt-slider-prev {
+			left: 0.75rem;
+		}
+
+		.apt-slider-next {
+			right: 0.75rem;
+		}
+
+		.apt-slider-counter {
+			background: rgba(0, 0, 0, 0.55);
+			border-radius: 3px;
+			bottom: 0.75rem;
+			color: #fff;
+			font-size: 0.75rem;
+			letter-spacing: 0.05em;
+			padding: 0.25rem 0.5rem;
+			position: absolute;
+			right: 0.75rem;
+			z-index: 2;
+		}
+
+		.apt-slider[data-single="true"] .apt-slider-btn,
+		.apt-slider[data-single="true"] .apt-slider-counter {
+			display: none;
+		}
+
+		@media screen and (max-width: 480px) {
+
+			.apt-slider-btn {
+				height: 2.25rem;
+				width: 2.25rem;
+				font-size: 1rem;
+			}
+
+			.apt-slider-prev { left: 0.5rem; }
+			.apt-slider-next { right: 0.5rem; }
+
+		}
