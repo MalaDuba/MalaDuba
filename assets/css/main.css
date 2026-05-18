@@ -2980,14 +2980,6 @@ input, select, textarea {
 					right: 0;
 				}
 
-		@media screen and (max-width: 980px) {
-
-			header br {
-				display: none;
-			}
-
-		}
-
 		@media screen and (max-width: 736px) {
 
 			header.major {
